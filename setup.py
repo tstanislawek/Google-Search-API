@@ -16,7 +16,7 @@ with open("test_requirements.txt") as f:
     test_requirements = [req.strip() for req in f.readlines()]
 
 setup(name='Google-Search-API',
-      version='1.1.14',
+      version='1.1.15',
       url='https://github.com/abenassi/Google-Search-API',
       description='Search in google',
       author='Anthony Casagrande, Agustin Benassi',
