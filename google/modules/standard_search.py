@@ -57,11 +57,22 @@ def search(query, pages=1, lang='en', area='com', ncr=False, void=True, time_per
     Args:
         query: String to search in google.
         pages: Number of pages where results must be taken.
-        area : Area of google homepages.
+              Num per page might not be supported by google anymore (because of google instant).
+        area: Area of google homepages, eg.(uk, de, ch, jp, ...).
+        ncr: This will allow to search Google with No Country Redirect.
+        time_period: Set time period for query if given
+        site: Set site for search and change area if ncr is True (
+              That increase query limit if you are looking information about different domains).
 
     TODO: add support to get the google results.
     Returns:
-        A GoogleResult object."""
+        A GoogleResult object.
+
+    @author JuaniFilardo, Additional information:
+        You may also wanna wait some time between queries, say, randint(50,65)
+        between each query, and randint(180,240) every 100 queries, which is
+        what I found useful.
+        """
 
     results = []
     for i in range(pages):

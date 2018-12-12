@@ -5,7 +5,7 @@ from __future__ import absolute_import
 from builtins import range
 from builtins import object
 
-from .utils import get_html, normalize_query
+from .utils import get_html
 from bs4 import BeautifulSoup
 import re
 from unidecode import unidecode
@@ -76,6 +76,8 @@ def shopping(query, pages=1):
                 j = j + 1
     return results
 
+def normalize_query(query):
+    return query.strip().replace(":", "%3A").replace("+", "%2B").replace("&", "%26").replace(" ", "+")
 
 def _get_shopping_url(query, page=0, per_page=10):
     return "http://www.google.com/search?hl=en&q={0}&tbm=shop&start={1}&num={2}".format(normalize_query(query), page * per_page, per_page)
