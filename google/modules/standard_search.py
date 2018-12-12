@@ -58,6 +58,7 @@ def search(query, pages=1, lang='en', area='com', ncr=False, void=True, time_per
         query: String to search in google.
         pages: Number of pages where results must be taken.
               Num per page might not be supported by google anymore (because of google instant).
+        lang:
         area: Area of google homepages, eg.(uk, de, ch, jp, ...).
         ncr: This will allow to search Google with No Country Redirect.
         time_period: Set time period for query if given
